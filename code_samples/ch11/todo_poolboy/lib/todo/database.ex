@@ -2,7 +2,7 @@ defmodule Todo.Database do
   @db_folder "./persist"
 
   def child_spec(_) do
-    File.mkdir_p!(@db_folder)
+    File.mkdir_p(@db_folder)
 
     :poolboy.child_spec(
       __MODULE__,
